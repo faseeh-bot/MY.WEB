@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YourBrand — Simple, fast, fully-owned website</title>
+  <meta name="description" content="A lightweight, accessible starter website you fully own. No build tools, no lock‑in.">
+  <link rel="canonical" href="https://your-username.github.io/your-repo/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <meta property="og:title" content="YourBrand">
+  <meta property="og:description" content="A lightweight, accessible starter website you fully own.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-username.github.io/your-repo/">
+  <meta property="og:image" content="assets/hero.svg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#home" aria-label="YourBrand Home">
+        <img src="assets/logo.svg" alt="" width="28" height="28"> <span>YourBrand</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+        <span class="sr-only">Toggle menu</span>☰
+      </button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>Build something you own.</h1>
+          <p>No subscriptions. No lock‑in. Just clean, portable HTML/CSS/JS you control.</p>
+          <p><a class="btn" href="#projects">See projects</a> <a class="btn btn-ghost" href="#contact">Contact me</a></p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img src="assets/hero.svg" alt="" width="480" height="320" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="wrap">
+        <h2>About</h2>
+        <p>Replace this with your story. This starter is intentionally simple: one HTML file, one CSS file, and a tiny JS file. It’s fast, accessible, and easy to host anywhere.</p>
+        <ul class="features">
+          <li>✅ Fully static (portable)</li>
+          <li>✅ Accessible semantics</li>
+          <li>✅ Dark mode support</li>
+          <li>✅ SEO-friendly metadata</li>
+          <li>✅ MIT licensed — yours to keep</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section alt">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Project One</h3>
+            <p>Short description of what you built, who it’s for, and the results.</p>
+            <p><a class="btn btn-small" href="#" aria-label="Open Project One link">View</a></p>
+          </article>
+          <article class="card">
+            <h3>Project Two</h3>
+            <p>Another thing you’re proud of. Link out to a demo or repo.</p>
+            <p><a class="btn btn-small" href="#" aria-label="Open Project Two link">View</a></p>
+          </article>
+          <article class="card">
+            <h3>Project Three</h3>
+            <p>Show, don’t tell. Keep it concise and scannable.</p>
+            <p><a class="btn btn-small" href="#" aria-label="Open Project Three link">View</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>You own your data. This form does not send anything to third parties. It uses your visitor’s email client via <code>mailto:</code>. If you want a serverless endpoint you control, see README.md.</p>
+        <form id="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn" type="submit">Send</button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year">2025</span> YourBrand. All rights reserved.</p>
+      <nav aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

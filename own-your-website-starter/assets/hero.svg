@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Abstract gradient">
+  <defs>
+    <radialGradient id="rg" cx="60%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#5b8cff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#5b8cff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="#0b0c0f"/>
+  <circle cx="600" cy="40" r="300" fill="url(#rg)"/>
+  <circle cx="100" cy="430" r="220" fill="url(#rg)"/>
+</svg>

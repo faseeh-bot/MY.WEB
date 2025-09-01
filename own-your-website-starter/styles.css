@@ -1,0 +1,97 @@
+/* Minimal, modern CSS — portable and framework-free */
+:root{
+  --bg: #0b0c0f;
+  --text: #e8eaed;
+  --muted: #a6adb6;
+  --card: #11141a;
+  --brand: #5b8cff;
+  --brand-weak: rgba(91,140,255,0.15);
+  --shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#ffffff;
+    --text:#111418;
+    --muted:#5a6472;
+    --card:#f4f6f8;
+    --brand:#335cff;
+    --brand-weak: rgba(51,92,255,0.12);
+    --shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 80% -10%, var(--brand-weak), transparent), var(--bg);
+}
+
+.wrap{ max-width: 1100px; margin: 0 auto; padding: 2rem; }
+
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{ left:1rem; top:1rem; width:auto; height:auto; padding:.5rem .75rem; background:var(--brand); color:#fff; border-radius:.5rem; }
+
+.site-header{
+  position: sticky; top: 0; z-index: 10;
+  background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,0));
+  backdrop-filter: blur(8px);
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .75rem 1rem; }
+.brand{ display:flex; align-items:center; gap:.5rem; text-decoration:none; color:var(--text); font-weight:700; }
+.brand img{ display:block; }
+.nav-links{ display:flex; gap: 1rem; list-style:none; margin:0; padding:0; }
+.nav-links a{ color:var(--text); text-decoration:none; padding:.5rem .75rem; border-radius:.5rem; }
+.nav-links a:hover{ background:var(--brand-weak); }
+.nav-toggle{ display:none; background:none; border:1px solid transparent; color:var(--text); padding:.5rem .75rem; border-radius:.5rem; }
+
+@media (max-width: 800px){
+  .nav-toggle{ display:block; }
+  .nav-links{ display:none; position:absolute; right:1rem; top:3.25rem; background:var(--card); padding:.5rem; border-radius:.75rem; box-shadow: var(--shadow); width:max-content; }
+  .nav-links.open{ display:block; }
+}
+
+.hero{ padding: 4rem 1rem; }
+.hero-inner{ display:grid; grid-template-columns: 1.1fr 1fr; align-items:center; gap:2rem; max-width:1100px; margin:0 auto; }
+.hero-copy h1{ font-size: clamp(2rem, 4vw, 3rem); line-height:1.1; margin:.5rem 0 1rem; }
+.hero-copy p{ margin:.25rem 0 1rem; color: var(--muted); }
+.btn{
+  display:inline-block; text-decoration:none; border:none; cursor:pointer;
+  padding: .75rem 1rem; border-radius:.75rem; font-weight:700;
+  background: var(--brand); color: #fff; box-shadow: var(--shadow);
+}
+.btn:hover{ filter: brightness(1.05); }
+.btn-ghost{ background: transparent; color: var(--text); border: 1px solid var(--brand); }
+.btn-small{ padding:.5rem .75rem; font-size:.9rem; box-shadow:none; }
+
+.section{ padding: 3rem 0; }
+.section.alt{ background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,0)); }
+.features{ display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:.25rem 1rem; padding-left:1rem; }
+.grid{ display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:1rem; }
+.card{ background: var(--card); padding:1rem; border-radius:1rem; box-shadow: var(--shadow); }
+.card h3{ margin-top:.25rem; }
+
+.form-row{ display:grid; gap:.25rem; margin-bottom: 1rem; }
+input, textarea{
+  width:100%; padding:.75rem; border-radius:.5rem; border:1px solid #2a2f39; background:#0f1218; color:var(--text);
+}
+label{ font-weight:600; }
+#form-status{ margin-top:.75rem; color: var(--muted); }
+
+.site-footer{ border-top:1px solid rgba(255,255,255,.08); }
+.site-footer .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.site-footer a{ color: var(--muted); text-decoration:none; margin-right:.75rem; }
+.site-footer a:hover{ color: var(--text); }
+
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+@media (max-width: 900px){
+  .hero-inner{ grid-template-columns: 1fr; }
+  .grid{ grid-template-columns: 1fr; }
+  .features{ grid-template-columns: 1fr; }
+}
